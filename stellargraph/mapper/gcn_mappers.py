@@ -119,3 +119,8 @@ class FullBatchNodeGenerator:
                 y[idx] = t
 
         return FullBatchNodeSequence(self.features, self.A, y, node_mask)
+
+
+class FullBatchLinkGenerator:
+    def __init__(self):
+        return

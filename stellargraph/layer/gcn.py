@@ -99,9 +99,10 @@ class GraphConvolution(Layer):
             "kernel_constraint": constraints.serialize(self.kernel_constraint),
             "bias_constraint": constraints.serialize(self.bias_constraint)
         }
-        base_config = super().get_config()
-        return {**base_config, **config}
 
+        base_config = super(GraphConvolution, self).get_config()
+        return dict(list(base_config.items()) + list(config.items()))
+        
 
 class GCN:
     """
