@@ -93,6 +93,7 @@ def link_inference(
              * 'l1' -- l1 operator, :math:`l_1(u,v)_i = |u_i-v_i|`,
              * 'l2' -- l2 operator, :math:`l_2(u,v)_i = (u_i-v_i)^2`,
              * 'avg' -- average, :math:`avg(u,v) = (u+v)/2`.
+             * 'cos' -- cosine distance.
         clip_limits (Tuple[float]): lower and upper thresholds for LeakyClippedLinear unit on top. If None (not provided),
             the LeakyClippedLinear unit is not applied.
         name (str): optional name of the defined function, used for error logging
@@ -140,6 +141,12 @@ def link_inference(
 
         elif edge_embedding_method == "avg":
             le = Average()([x0, x1])
+            # add dense layer to convert le to the desired output:
+            out = Dense(output_dim, activation=output_act)(le)
+            out = Reshape((output_dim,))(out)
+
+        elif edge_embedding_method == "cos":
+            le = Dot(axes=-1, normalize=True)([x0, x1])
             # add dense layer to convert le to the desired output:
             out = Dense(output_dim, activation=output_act)(le)
             out = Reshape((output_dim,))(out)
