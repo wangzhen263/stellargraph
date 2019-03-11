@@ -46,7 +46,7 @@ The examples folder structure is shown below.
        Example of supervised link attribute prediction for a heterogeneous network with attributed nodes of different types,
     using the HinSAGE algorithm.
 
-* [`/node-classification-graphsage`](https://github.com/stellargraph/stellargraph/tree/master/demos/node-classification)
+* [`/node-classification`](https://github.com/stellargraph/stellargraph/tree/master/demos/node-classification)
 
     * [`/node-classification-graphsage`](https://github.com/stellargraph/stellargraph/tree/master/demos/node-classification/graphsage)
         
@@ -71,12 +71,12 @@ The examples folder structure is shown below.
     
     * [`/node-classification-unsupervisedgraphsage`](https://github.com/stellargraph/stellargraph/tree/master/demos/node-classification/unsupervisedgraphsage)
 
-Example of unsupervised node classification for a homogeneous network with attributed nodes, using the GraphSAGE algorithm.
+        Example of unsupervised node classification for a homogeneous network with attributed nodes, using the GraphSAGE algorithm.
 
 
 * [`/community-detection`](https://github.com/stellargraph/stellargraph/tree/master/demos/community-detection)
         
-        Example of community detection, using graph embeddings extracted through the Unsupervised GraphSAGE algorithm.
+     Example of community detection, using graph embeddings extracted through the Unsupervised GraphSAGE algorithm.
 
 
 
