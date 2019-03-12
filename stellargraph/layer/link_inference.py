@@ -29,6 +29,7 @@ from keras.layers import (
     Average,
     Reshape,
     Activation,
+    Dot,
 )
 from keras import backend as K
 
