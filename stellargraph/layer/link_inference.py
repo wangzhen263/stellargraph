@@ -148,9 +148,7 @@ def link_inference(
 
         elif edge_embedding_method == "cos":
             le = Dot(axes=-1, normalize=True)([x0, x1])
-            # add dense layer to convert le to the desired output:
-            out = Dense(output_dim, activation=output_act)(le)
-            out = Reshape((output_dim,))(out)
+            out = Reshape((output_dim,))(le)
 
         else:
             raise NotImplementedError(
